@@ -13,11 +13,11 @@ This code is used for showing a tally counter (counter in general)
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-#define SCREEN_WIDTH 128 // OLED display width, in pixels
-#define SCREEN_HEIGHT 64 // OLED display height, in pixels
+#define SCREEN_WIDTH 128 
+#define SCREEN_HEIGHT 64 
 
-#define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
-#define SCREEN_ADDRESS 0x3C // Obtained from I2C Scanner. Look for the program in Github.
+#define OLED_RESET     -1 
+#define SCREEN_ADDRESS 0x3C 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 // Button Class to manage all things related to buttons.
@@ -36,28 +36,25 @@ class BtnClass{
 
     BtnClass(int pin, int number, int* count)
     {
-      buttonPin = pin; // assigns the button pin
-      modifier = number; // what value is added to the counter
-      counter = count; // store counter variable address so this class can change the counter variable.
+      buttonPin = pin; 
+      modifier = number; 
+      counter = count; 
     }
 
     // Member function to add a value to the counter.
     void addCounter()
     {
       *counter += modifier;
-      if(*counter < 0) // limits the counter so it cannot be a negative number.
+      if(*counter < 0) 
         *counter = 0;
     }
 
     // Member function to always check the button.
-    // Must be called at least once in the loop() function.
     void buttonCheck()
     {
-      // read the current state of the button
+      
       currentState = digitalRead(buttonPin);
 
-      // Button debouncing
-      // For more information on debouncing, check ESP32.io
       if(millis() - lastDebounceTime > debounceThres)
       {
         if(lastSteadyState == HIGH && currentState == LOW)
@@ -159,11 +156,11 @@ void setup() {
 }
 
 void loop() {
-  tallyCounter(counter); // Call the function for display
-  upButton.buttonCheck(); // Call the button check function of both buttons
+  tallyCounter(counter);
+  upButton.buttonCheck(); 
   downButton.buttonCheck();
 
-  // Condition if both buttons are pressed
+ 
   if(upButton.isPressed && downButton.isPressed)
   {
     // Timing for 2 seconds
