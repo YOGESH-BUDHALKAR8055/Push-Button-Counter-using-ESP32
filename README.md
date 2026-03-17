@@ -1,7 +1,5 @@
 
-#PROJECT
-Push Button Counter
-A Push Button Counter using an ESP32 and an OLED display is a simple and educational project. It demonstrates interfacing hardware components, using GPIO pins, and displaying data on an OLED screen. Here's an overview
+# Counter LED using ESP32 and OLED Display
 
 ## Objective
 Create a counter that increments or decrements when a push button is pressed, with the count displayed on an OLED screen.
