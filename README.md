@@ -1,9 +1,3 @@
-**Name:**    Yogesh Prabhakar Budhalkar
-**Company:** CODTECH IT SOLUTIONS
-**ID:**      CT08DS344
-**Domain:**  Embedded Systems
-**Duration:** December to January 2025
-**Mentor:**   SRAVANI GOUNI
 
 ##PROJECT: Push Button Counter
 A Push Button Counter using an ESP32 and an OLED display is a simple and educational project. It demonstrates interfacing hardware components, using GPIO pins, and displaying data on an OLED screen. Here's an overview
